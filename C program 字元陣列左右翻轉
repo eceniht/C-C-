@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+
+char test[]="12+*3";
+
+void scan(char *arr)
+{
+
+	for (int i=0;i<strlen(arr)/2;i++)
+	{
+		char t,*p,*q;
+		p=&arr[i];
+		q=&arr[strlen(arr)-i-1];
+		t=*p;
+		*p=*q;
+		*q=t;
+	}
+}
+
+
+int main()
+{
+    scan(&test);
+    
+    for(int i=0;i<strlen(test);i++)
+    {
+        printf("%c",test[i]);
+    }
+    return 0;
+}
